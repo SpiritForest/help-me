@@ -7,16 +7,14 @@ module.exports = function count(s, pairs) {
     n *= Math.pow(pairs[i][0], pairs[i][1]);
   }
   if (n > 1000000) return 0;
+
     var j = 1;
-  for (let i = 0; i <= n; i++){
+  for (let i = 1; i <= n; i++){
     if (findGCD(i+j,n) == 1){arr.push(1);}
     if (findGCD(i+j,n) != 1){arr.push(0);}
-    if (arr[arr.length - 1] == mask[j]){
-      j++;
-    }
-    if (j > mask.length){
-      j = 1;
-    }
+    if (arr[arr.length - 1] == mask[j]){j++;}
+    if (j == mask.length){j = 1;}
+   // console.log(j);
   }
 
   var res = arr.join('');
@@ -25,8 +23,9 @@ module.exports = function count(s, pairs) {
     answer++;
   }
   var result = answer % 1000000007;
-  console.log(result);
-  return Math.floor(result);
+  //console.log(res);
+  //console.log(result);
+  return result;
 }
 
 function findGCD(one, two){
