@@ -5,7 +5,7 @@ module.exports = function count(s, pairs) {
   for (let i = 0; i < pairs.length; i++) {
     n *= Math.pow(pairs[i][0], pairs[i][1]);
   }
-  if (n > 10000000) return 0;
+  if (n > 1000000) return 0;
 
 for (let i = 0; i < n; i++){
   if (findGCD(i,n) == 1){arr.push(1);}
